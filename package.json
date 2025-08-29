@@ -4,9 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "tinacms dev -c \"next dev\"",
-    "build": "tinacms build && next build",
+	"prebuild": "npx @tinacms/cli@latest build",
+    "build": "next build",
     "build-local": "tinacms build --local --skip-indexing --skip-cloud-checks && next build",
-    "start": "tinacms build && next start",
+    "start": "next start -p 3000",
     "lint": "next lint"
   },
   "dependencies": {
