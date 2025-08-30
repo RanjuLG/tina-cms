@@ -1,6 +1,10 @@
 /** @type {import('next').NextConfig} */
 
 module.exports = {
+  output: 'standalone',
+  experimental: {
+    outputFileTracingRoot: undefined,
+  },
   async rewrites() {
     return [
       {

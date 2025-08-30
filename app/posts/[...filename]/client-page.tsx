@@ -1,6 +1,7 @@
 "use client";
 import { tinaField, useTina } from "tinacms/dist/react";
-import type { PostQuery } from "../../../tina/__generated__/types";
+// Using any for now due to type generation issues
+// import type { PostQuery } from "../../../tina/__generated__/types";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 interface ClientPageProps {
@@ -8,7 +9,7 @@ interface ClientPageProps {
   variables: {
     relativePath: string;
   };
-  data: PostQuery;
+  data: any; // Temporarily using any instead of PostQuery
 }
 
 export default function Post(props: ClientPageProps) {

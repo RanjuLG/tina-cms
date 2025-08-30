@@ -1,14 +1,15 @@
 "use client";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { tinaField, useTina } from "tinacms/dist/react";
-import type { PageQuery } from "../../tina/__generated__/types";
+// Using any for now due to type generation issues
+// import type { PageQuery } from "../../tina/__generated__/types";
 
 interface ClientPageProps {
   query: string;
   variables: {
     relativePath: string;
   };
-  data: { page: PageQuery["page"] };
+  data: { page: any }; // Temporarily using any instead of PageQuery["page"]
 }
 
 export default function ClientPage(props: ClientPageProps) {

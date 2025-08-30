@@ -1,15 +1,8 @@
 import Post from "./client-page";
 import client from "../../../tina/__generated__/client";
 
-export async function generateStaticParams() {
-  const pages = await client.queries.postConnection();
-  const paths = pages.data?.postConnection?.edges?.map((edge) => ({
-    filename: edge?.node?._sys.breadcrumbs,
-  }));
-
-  return paths || [];
-}
-
+// Force dynamic rendering to avoid build-time data fetching
+export const dynamic = 'force-dynamic';
 
 export default async function PostPage({
   params,
